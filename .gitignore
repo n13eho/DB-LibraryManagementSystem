@@ -5,3 +5,5 @@ obj/x64/Debug/DesignTimeResolveAssemblyReferences.cache
 .vs/LibraryManagementSystem/v16/.suo
 obj/x64/Debug/DesignTimeResolveAssemblyReferences.cache
 *.cache
+.vs/LibraryManagementSystem/v16/.suo
+*.cache

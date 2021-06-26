@@ -103,7 +103,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(244, 50);
             this.label6.TabIndex = 12;
-            this.label6.Text = "新增图书信息";
+            this.label6.Text = "图书借阅信息";
             // 
             // bname_tb
             // 

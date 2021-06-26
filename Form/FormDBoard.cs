@@ -56,9 +56,9 @@ namespace LibraryManagementSystem
 
         /***************************************************************
         【函数名称】         addControlsToPanel
-        【函数功能】         
+        【函数功能】         清空控制面板，重新加载新的面板
         【参数】             输入参数：Control c
-        【访问变量】          DockStyle
+        【访问变量】         DockStyle
         【返回值】           无
         【使用情况】         调用System.Windows.Forms.Panel.Controls::Clear、Add函数;被构造函数、button1_Click函数、button2_Click函数、button1_Click_1函数、recommend_butt_Click函数、manageBook_butt_Click函数、manageReader_butt_Click函数、manageRecbooks_butt_Click函数调用
         【开发者及日期】      Algernon, 2021/06/19
@@ -73,11 +73,11 @@ namespace LibraryManagementSystem
 
         /***************************************************************
         【函数名称】         button1_Click
-        【函数功能】         
+        【函数功能】         显示个人中心界面
         【参数】             输入参数：object sender, EventArgs e
         【访问变量】         UC_selfHome
         【返回值】           无
-        【使用情况】         调用moveSidePanel函数;被鼠标点击选中xx按钮动作所调用
+        【使用情况】         调用moveSidePanel函数;被鼠标点击选中‘个人中心’按钮动作所调用
         【开发者及日期】      Algernon, 2021/06/19
         【版本】             V1.0
         ****************************************************************/
@@ -100,11 +100,11 @@ namespace LibraryManagementSystem
 
         /***************************************************************
         【函数名称】         button7_Click
-        【函数功能】         
+        【函数功能】         log out
         【参数】             输入参数：object sender, EventArgs e
         【访问变量】         无
         【返回值】           无
-        【使用情况】         调用Hide函数、MainForm::ShowDialog函数、Close函数;被鼠标点击选中xx按钮动作所调用
+        【使用情况】         调用Hide函数、MainForm::ShowDialog函数、Close函数;被鼠标点击选中‘退出’按钮动作所调用
         【开发者及日期】      Algernon, 2021/06/19
         【版本】             V1.0
         ****************************************************************/        
@@ -172,11 +172,11 @@ namespace LibraryManagementSystem
 
         /***************************************************************
         【函数名称】         button2_Click
-        【函数功能】         
+        【函数功能】         显示查询借阅界面
         【参数】             输入参数：object sender, EventArgs e
         【访问变量】         UC_lookPB
         【返回值】           无
-        【使用情况】         调用moveSidePanel函数、addControlsToPanel函数;被鼠标点击选中xx按钮动作所调用
+        【使用情况】         调用moveSidePanel函数、addControlsToPanel函数;被鼠标点击选中‘查询借阅’按钮动作所调用
         【开发者及日期】      Algernon, 2021/06/19
         【版本】             V1.0
         ****************************************************************/
@@ -282,11 +282,11 @@ namespace LibraryManagementSystem
 
         /***************************************************************
         【函数名称】         button1_Click_1
-        【函数功能】         
+        【函数功能】         显示还书界面
         【参数】             输入参数：object sender, EventArgs e
-        【访问变量】          UC_returnBooks
+        【访问变量】         UC_returnBooks
         【返回值】           无
-        【使用情况】         调用moveSidePanel函数、addControlsToPanel函数;被鼠标点击选中xx按钮动作所调用
+        【使用情况】         调用moveSidePanel函数、addControlsToPanel函数;被鼠标点击选中‘还书’按钮动作所调用
         【开发者及日期】      Algernon, 2021/06/19
         【版本】             V1.0
         ****************************************************************/
@@ -299,11 +299,11 @@ namespace LibraryManagementSystem
 
         /***************************************************************
         【函数名称】         recommend_butt_Click
-        【函数功能】         
+        【函数功能】         显示推荐购买界面
         【参数】             输入参数：object sender, EventArgs e
         【访问变量】          recommend_butt
         【返回值】           无
-        【使用情况】         调用moveSidePanel函数、addControlsToPanel函数;被鼠标点击选中xx按钮动作所调用
+        【使用情况】         调用moveSidePanel函数、addControlsToPanel函数;被鼠标点击选中‘推荐购买’按钮动作所调用
         【开发者及日期】      Algernon, 2021/06/19
         【版本】             V1.0
         ****************************************************************/
@@ -316,11 +316,11 @@ namespace LibraryManagementSystem
 
         /***************************************************************
         【函数名称】         manageBook_butt_Click
-        【函数功能】         
+        【函数功能】         显示图书管理界面
         【参数】             输入参数：object sender, EventArgs e
         【访问变量】          manageBook_butt、user
         【返回值】           无
-        【使用情况】         调用moveSidePanel函数、addControlsToPanel函数;被鼠标点击选中xx按钮动作所调用
+        【使用情况】         调用moveSidePanel函数、addControlsToPanel函数;被鼠标点击选中‘图书管理’按钮动作所调用
         【开发者及日期】      Algernon, 2021/06/19
         【版本】             V1.0
         ****************************************************************/
@@ -338,11 +338,11 @@ namespace LibraryManagementSystem
 
         /***************************************************************
         【函数名称】         manageReader_butt_Click
-        【函数功能】         
+        【函数功能】         显示读者管理界面
         【参数】             输入参数：object sender, EventArgs e
         【访问变量】          manageReader_butt、user
         【返回值】           无
-        【使用情况】         调用moveSidePanel函数、addControlsToPanel函数;被鼠标点击选中xx按钮动作所调用
+        【使用情况】         调用moveSidePanel函数、addControlsToPanel函数;被鼠标点击选中‘读者管理’按钮动作所调用
         【开发者及日期】      Algernon, 2021/06/19
         【版本】             V1.0
         ****************************************************************/
@@ -361,11 +361,11 @@ namespace LibraryManagementSystem
 
         /***************************************************************
         【函数名称】         manageRecbooks_butt_Click
-        【函数功能】         
+        【函数功能】         显示查看已推荐界面
         【参数】             输入参数：object sender, EventArgs e
         【访问变量】          manageRecbooks_butt、user
         【返回值】           无
-        【使用情况】         调用moveSidePanel函数、addControlsToPanel函数;被鼠标点击选中xx按钮动作所调用
+        【使用情况】         调用moveSidePanel函数、addControlsToPanel函数;被鼠标点击选中‘查看已推荐’按钮动作所调用
         【开发者及日期】      Algernon, 2021/06/19
         【版本】             V1.0
         ****************************************************************/
