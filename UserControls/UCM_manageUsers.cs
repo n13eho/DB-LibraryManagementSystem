@@ -11,6 +11,13 @@ using System.Data.Odbc;
 
 namespace LibraryManagementSystem.UserControls
 {
+    /*************************************************************************
+    【类名】             UCM_manageUsers
+    【功能】             用户管理
+    【接口说明】         refreash_butt_Click(object sender, EventArgs e)、ssearch_butt_Click(object sender, EventArgs e)、dgv_manageUsers_CellClick(object sender, DataGridViewCellEventArgs e)、illegal_butt_Click(object sender, EventArgs e)、isHoldingBook()、delete_butt_Click(object sender, EventArgs e)、delete_butt_Click(object sender, EventArgs e)
+    【开发者及日期】      Algernon, 2021/06/19
+    【版本】             V1.0
+    *************************************************************************/
     public partial class UCM_manageUsers : UserControl
     {
         private userInfo user;
@@ -20,6 +27,16 @@ namespace LibraryManagementSystem.UserControls
 
         //private connectDB condb;
 
+        /*************************************************************************
+        【函数名称】       UCM_manageUsers
+        【函数功能】       类构造函数
+        【参数】           userInfo theUser
+        【访问变量】       无
+        【返回值】         无
+        【使用情况】       调用InitializeComponent()、showAllUsers()；被FormDBoard new新窗体时使用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         public UCM_manageUsers(userInfo thUser)
         {
             InitializeComponent();
@@ -28,6 +45,16 @@ namespace LibraryManagementSystem.UserControls
             showAllUsers();
         }
 
+        /*************************************************************************
+        【函数名称】       showAllUsers
+        【函数功能】       显示所有用户
+        【参数】           无
+        【访问变量】       dgv_manageUsers
+        【返回值】         无
+        【使用情况】       无调用函数；被构造函数调用调用、被函数refreash_butt_Click调用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         private void showAllUsers()
         {
             dgv_manageUsers.Rows.Clear();
@@ -47,12 +74,32 @@ namespace LibraryManagementSystem.UserControls
             }
         }
 
+        /*************************************************************************
+        【函数名称】       refreash_butt_Click
+        【函数功能】       刷新用户列表
+        【参数】           object sender, EventArgs e
+        【访问变量】       无
+        【返回值】         无
+        【使用情况】       调用showAllUsers函数；被鼠标点击‘刷新’按钮动作所调用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         private void refreash_butt_Click(object sender, EventArgs e)
         {
             showAllUsers();
         }
 
 
+        /*************************************************************************
+        【函数名称】       ssearch_butt_Click
+        【函数功能】       搜索用户
+        【参数】           object sender, EventArgs e
+        【访问变量】       无
+        【返回值】         无
+        【使用情况】       无调用函数；被鼠标点击‘搜索’按钮动作所调用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         private void ssearch_butt_Click(object sender, EventArgs e)
         {
             // 先清空
@@ -107,6 +154,17 @@ namespace LibraryManagementSystem.UserControls
         }
         private string isIllegal;
 
+
+        /*************************************************************************
+        【函数名称】       dgv_manageUsers_CellClick
+        【函数功能】       选中某一行，更新chosen_book_index
+        【参数】           object sender, DataGridViewCellEventArgs e
+        【访问变量】       e.RowIndex
+        【返回值】         无
+        【使用情况】       无调用函数；被鼠标单击某一行动作所调用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         private void dgv_manageUsers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -120,6 +178,16 @@ namespace LibraryManagementSystem.UserControls
             }
         }
 
+        /*************************************************************************
+        【函数名称】       illegal_butt_Click
+        【函数功能】       设置非法用户
+        【参数】           object sender, EventArgs e
+        【访问变量】       chosen_book_index
+        【返回值】         无
+        【使用情况】       无调用函数；被鼠标点击‘更改身份合法性’按钮动作所调用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         private void illegal_butt_Click(object sender, EventArgs e)
         {
             if(uno == "2018302359")
@@ -177,7 +245,17 @@ namespace LibraryManagementSystem.UserControls
             else
                 MessageBox.Show("请选择一个人先", "Error");
         }
-        
+
+        /*************************************************************************
+        【函数名称】       isHoldingBook
+        【函数功能】       判断该用户是否正借有图书
+        【参数】           无
+        【访问变量】       user、uno
+        【返回值】         bool型变量，该读者是否正借书
+        【使用情况】       无调用函数；被函数delete_butt_Click调用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         private bool isHoldingBook()
         {
             OdbcConnection con = new OdbcConnection(user.conString);
@@ -194,6 +272,16 @@ namespace LibraryManagementSystem.UserControls
             else return false;
         }
 
+        /*************************************************************************
+        【函数名称】       delete_butt_Click
+        【函数功能】       删除选中的用户：如果用户时管理员或者正持有图书，则不能删除
+        【参数】           object sender, EventArgs e
+        【访问变量】       uname、uno
+        【返回值】         无
+        【使用情况】       无调用函数；被鼠标点击‘选中删除’按钮动作所调用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         private void delete_butt_Click(object sender, EventArgs e)
         {
             if (uno == "2018302359")

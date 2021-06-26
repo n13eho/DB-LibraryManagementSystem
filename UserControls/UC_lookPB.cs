@@ -11,6 +11,13 @@ using System.Data.Odbc;
 
 namespace LibraryManagementSystem.UserControls
 {
+    /*************************************************************************
+    【类名】             UC_lookPB
+    【功能】             查询检索书目、选中借书的用户控制面板
+    【接口说明】          dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)、button1_Click(object sender, EventArgs e)、borrow_butt_Click(object sender, EventArgs e)、
+    【开发者及日期】      Algernon, 2021/06/19
+    【版本】             V1.0
+    *************************************************************************/
     public partial class UC_lookPB : UserControl
     {
         // the chosen book's bno
@@ -21,6 +28,17 @@ namespace LibraryManagementSystem.UserControls
         private int chosen_book_index = -1;
         // user info
         private userInfo user;
+
+        /*************************************************************************
+        【函数名称】       UC_lookPB
+        【函数功能】       类构造函数
+        【参数】           userInfo theUser
+        【访问变量】       无
+        【返回值】         无
+        【使用情况】       调用InitializeComponent()；被FormDBoard new新窗体时使用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         public UC_lookPB(userInfo theUser)
         {
             InitializeComponent();
@@ -33,7 +51,16 @@ namespace LibraryManagementSystem.UserControls
             dgw_search.MultiSelect = false;//禁止多行选择
         }
 
-
+        /*************************************************************************
+        【函数名称】       dataGridView1_CellContentClick
+        【函数功能】       获取用户鼠标选取的某一行，更新行号
+        【参数】           object sender, DataGridViewCellEventArgs e
+        【访问变量】       表格e.RowIndex行信息
+        【返回值】         无
+        【使用情况】       没有调用其他函数；被构造函数userInfo::userInfo()使用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {// 用于选择某一行的值
             if(e.RowIndex >= 0)
@@ -49,6 +76,17 @@ namespace LibraryManagementSystem.UserControls
             }
         }
 
+
+        /*************************************************************************
+        【函数名称】       button1_Click
+        【函数功能】       根据搜索条件和输入的关键词进行图书检索
+        【参数】           object sender, EventArgs e
+        【访问变量】       表格e.RowIndex行信息
+        【返回值】         无
+        【使用情况】       调用dgw_search.Rows.Clear()、dgw_search.Rows.Add()；被鼠标点击查询按钮动作所调用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         private void button1_Click(object sender, EventArgs e)
         {
             // 先清空
@@ -116,6 +154,16 @@ namespace LibraryManagementSystem.UserControls
 
         }
 
+        /*************************************************************************
+        【函数名称】       borrow_butt_Click
+        【函数功能】       根据选择的图书进行借书操作，同时异常处理（未选择书本就点击、书已经被借走）
+        【参数】           object sender, EventArgs e
+        【访问变量】       选中的chosen_book_index行信息
+        【返回值】         无
+        【使用情况】       无调用函数；被鼠标点击选中借书按钮动作所调用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         private void borrow_butt_Click(object sender, EventArgs e)
         {
             if(chosen_book_index < 0)

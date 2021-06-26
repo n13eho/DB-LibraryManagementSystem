@@ -11,12 +11,30 @@ using System.Data.Odbc;
 
 namespace LibraryManagementSystem.UserControls
 {
+    /*************************************************************************
+    【类名】             UCM_manageBooks
+    【功能】             管理员管理图书
+    【接口说明】         showAllBooks()、refreash_butt_Click(object sender, EventArgs e)、ssearch_butt_Click(object sender, EventArgs e)、dgv_manageBooks_CellClick(object sender, DataGridViewCellEventArgs e)、dgv_manageBooks_CellDoubleClick(object sender, DataGridViewCellEventArgs e)、update_butt_Click(object sender, EventArgs e)、delete_butt_Click(object sender, EventArgs e)、addBooks_butt_Click(object sender, EventArgs e)
+    【开发者及日期】      Algernon, 2021/06/19
+    【版本】             V1.0
+    *************************************************************************/
     public partial class UCM_manageBooks : UserControl
     {
         private userInfo user;
         private int chosen_book_index = -1;
         private string bno = "999";
         private string isBorrowed;
+
+        /*************************************************************************
+        【函数名称】       UCM_manageBooks
+        【函数功能】       类构造函数
+        【参数】           userInfo theUser
+        【访问变量】       无
+        【返回值】         无
+        【使用情况】       调用InitializeComponent()、showAllBooks()；被FormDBoard new新窗体时使用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         public UCM_manageBooks(userInfo theUser)
         {
             InitializeComponent();
@@ -24,6 +42,16 @@ namespace LibraryManagementSystem.UserControls
             showAllBooks();
         }
 
+        /*************************************************************************
+        【函数名称】       showAllBooks
+        【函数功能】       显示所有书条目和相关信息
+        【参数】           无
+        【访问变量】        dgv_manageBooks表格
+        【返回值】         无
+        【使用情况】       无调用函数；被构造函数、refreash_butt_Click函数调用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         private void showAllBooks()
         {
             dgv_manageBooks.Rows.Clear();
@@ -43,12 +71,31 @@ namespace LibraryManagementSystem.UserControls
             }
         }
 
-
+        /*************************************************************************
+        【函数名称】       refreash_butt_Click
+        【函数功能】       刷新图书信息并显示
+        【参数】           object sender, EventArgs e
+        【访问变量】       无
+        【返回值】         无
+        【使用情况】       调用showAllBooks函数；被鼠标点击‘刷新’按钮动作所调用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         private void refreash_butt_Click(object sender, EventArgs e)
         {
             showAllBooks();
         }
 
+        /*************************************************************************
+        【函数名称】       return_butt_Click
+        【函数功能】       根据关键词搜索图书
+        【参数】           object sender, EventArgs e
+        【访问变量】       dgv_manageBooks
+        【返回值】         无
+        【使用情况】       无调用函数；被鼠标点击‘搜索’按钮动作所调用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         private void ssearch_butt_Click(object sender, EventArgs e)
         {
             // 先清空
@@ -102,6 +149,18 @@ namespace LibraryManagementSystem.UserControls
             }
 
         }
+
+
+        /*************************************************************************
+        【函数名称】       dgv_manageBooks_CellClick
+        【函数功能】       选中某一行，更新选中行信息
+        【参数】           object sender, DataGridViewCellEventArgs e
+        【访问变量】       RowIndex
+        【返回值】         无
+        【使用情况】       无调用函数；被鼠标单击某一行动作所调用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         private void dgv_manageBooks_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -114,6 +173,16 @@ namespace LibraryManagementSystem.UserControls
             }
         }
 
+        /*************************************************************************
+        【函数名称】       dgv_manageBooks_CellDoubleClick
+        【函数功能】       双击显示图书信息，谁借了这本书
+        【参数】           object sender, EventArgs e
+        【访问变量】       e.RowIndex、isBorrowed
+        【返回值】         无
+        【使用情况】       调用函数fub.ShowDialog；被鼠标双击某一行图书动作作所调用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         private void dgv_manageBooks_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {//新出一个form显示谁借了这本书
             if (e.RowIndex >= 0 && isBorrowed == "1")
@@ -126,6 +195,16 @@ namespace LibraryManagementSystem.UserControls
             }
         }
 
+        /*************************************************************************
+        【函数名称】       update_butt_Click
+        【函数功能】       选中修改图书信息
+        【参数】           object sender, EventArgs e
+        【访问变量】       chosen_book_index
+        【返回值】         无
+        【使用情况】       调用函数fub.ShowDialog；被鼠标点击‘选中还书’按钮动作所调用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         private void update_butt_Click(object sender, EventArgs e)
         {// 选中修改
             if (chosen_book_index >= 0)
@@ -138,6 +217,16 @@ namespace LibraryManagementSystem.UserControls
             else MessageBox.Show("选择一本书先");
         }
 
+        /*************************************************************************
+        【函数名称】       delete_butt_Click
+        【函数功能】       删除所选图书
+        【参数】           object sender, EventArgs e
+        【访问变量】       chosen_book_index
+        【返回值】         无
+        【使用情况】       调用函数fub.ShowDialog；被鼠标点击‘选中删除’按钮动作所调用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         private void delete_butt_Click(object sender, EventArgs e)
         {
             if (chosen_book_index >= 0)
@@ -171,6 +260,16 @@ namespace LibraryManagementSystem.UserControls
 
         }
 
+        /*************************************************************************
+        【函数名称】       addBooks_butt_Click
+        【函数功能】       新增图书
+        【参数】           object sender, EventArgs e
+        【访问变量】       无
+        【返回值】         无
+        【使用情况】       调用i.ShowDialog函数；被鼠标点击‘新增图书’按钮动作所调用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         private void addBooks_butt_Click(object sender, EventArgs e)
         {
             using (Form_addBook i = new Form_addBook(user))

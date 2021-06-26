@@ -12,9 +12,27 @@ using System.Text.RegularExpressions;
 
 namespace LibraryManagementSystem.UserControls
 {
+    /*************************************************************************
+    【类名】             UC_recommend
+    【功能】             推荐图书
+    【接口说明】         clear_butt_Click(object sender, EventArgs e)、submit_butt_Click(object sender, EventArgs e)
+    【开发者及日期】      Algernon, 2021/06/19
+    【版本】             V1.0
+    *************************************************************************/
     public partial class UC_recommend : UserControl
     {
         private userInfo user;
+
+        /*************************************************************************
+        【函数名称】       UC_recommend
+        【函数功能】       类构造函数
+        【参数】           userInfo theUser
+        【访问变量】       无
+        【返回值】         无
+        【使用情况】       调用InitializeComponent()；被FormDBoard new新窗体时使用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         public UC_recommend(userInfo theUser)
         {
             InitializeComponent();
@@ -22,6 +40,17 @@ namespace LibraryManagementSystem.UserControls
 
         }
 
+
+        /*************************************************************************
+        【函数名称】       clear_butt_Click
+        【函数功能】       重置，清空
+        【参数】           object sender, EventArgs e
+        【访问变量】       无
+        【返回值】         无
+        【使用情况】       无调用函数；被鼠标点击‘重置’按钮动作所调用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         private void clear_butt_Click(object sender, EventArgs e)
         {// clear
             tb_author.Text = "";
@@ -29,6 +58,16 @@ namespace LibraryManagementSystem.UserControls
             tb_publisher.Text = "";
         }
 
+        /*************************************************************************
+        【函数名称】       submit_butt_Click
+        【函数功能】       提交推荐信息
+        【参数】           object sender, EventArgs e
+        【访问变量】       user.userId、tb_bookName.Text、tb_author.Text、tb_publisher.Text
+        【返回值】         无
+        【使用情况】       无调用函数；被鼠标点击提交按钮动作所调用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         private void submit_butt_Click(object sender, EventArgs e)
         {
             Match m = Regex.Match(tb_bookName.Text, @".*[^\s]");

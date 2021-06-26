@@ -11,15 +11,44 @@ using System.Data.Odbc;
 
 namespace LibraryManagementSystem.UserControls
 {
+    /*************************************************************************
+    【类名】             UC_selfHome
+    【功能】             个人中心
+    【接口说明】         getBorrowedBooksNumer()
+    【开发者及日期】      Algernon, 2021/06/19
+    【版本】             V1.0
+    *************************************************************************/
     public partial class UC_selfHome : UserControl
     {
         private userInfo user;
+
+        /*************************************************************************
+        【函数名称】       UC_selfHome
+        【函数功能】       类构造函数
+        【参数】           userInfo theUser
+        【访问变量】       无
+        【返回值】         无
+        【使用情况】       调用InitializeComponent()、getBorrowedBooksNumer()；被FormDBoard new新窗体时使用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         public UC_selfHome(userInfo theUser)
         {
             InitializeComponent();
             user = theUser;
             getBorrowedBooksNumer();
         }
+
+        /*************************************************************************
+        【函数名称】       getBorrowedBooksNumer
+        【函数功能】       返回已借图书数量
+        【参数】           无
+        【访问变量】       user.userId
+        【返回值】         无
+        【使用情况】       无调用函数；被构造函数调用调用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         private void getBorrowedBooksNumer()
         {
             OdbcConnection con = new OdbcConnection(user.conString);
