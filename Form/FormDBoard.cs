@@ -21,6 +21,17 @@ namespace LibraryManagementSystem
     public partial class FormDBoard : Form
     {
         private userInfo user;
+
+        /***************************************************************
+        【函数名称】         FormDBoard
+        【函数功能】         构造函数、初始化窗体信息
+        【参数】             输入参数：userInfo theUser
+        【访问变量】         UC_selfHome
+        【返回值】           无
+        【使用情况】         调用InitializeComponent函数、addControlsToPanel函数、System.Windows.Forms.Timer::Start函数;被MainForm::buttonLogin_Click函数调用
+        【开发者及日期】      Algernon, 2021/06/19
+        【版本】             V1.0
+        ****************************************************************/
         public FormDBoard(userInfo theUser)
         {
             InitializeComponent();
@@ -43,6 +54,16 @@ namespace LibraryManagementSystem
 
         }
 
+        /***************************************************************
+        【函数名称】         addControlsToPanel
+        【函数功能】         
+        【参数】             输入参数：Control c
+        【访问变量】          DockStyle
+        【返回值】           无
+        【使用情况】         调用System.Windows.Forms.Panel.Controls::Clear、Add函数;被构造函数、button1_Click函数、button2_Click函数、button1_Click_1函数、recommend_butt_Click函数、manageBook_butt_Click函数、manageReader_butt_Click函数、manageRecbooks_butt_Click函数调用
+        【开发者及日期】      Algernon, 2021/06/19
+        【版本】             V1.0
+        ****************************************************************/
         private void addControlsToPanel(Control c)
         {
             c.Dock = DockStyle.Fill;
@@ -50,6 +71,16 @@ namespace LibraryManagementSystem
             panelControl.Controls.Add(c);
         }
 
+        /***************************************************************
+        【函数名称】         button1_Click
+        【函数功能】         
+        【参数】             输入参数：object sender, EventArgs e
+        【访问变量】         UC_selfHome
+        【返回值】           无
+        【使用情况】         调用moveSidePanel函数;被鼠标点击选中xx按钮动作所调用
+        【开发者及日期】      Algernon, 2021/06/19
+        【版本】             V1.0
+        ****************************************************************/
         private void button1_Click(object sender, EventArgs e)
         {
             moveSidePanel(selfCenter);
@@ -67,6 +98,16 @@ namespace LibraryManagementSystem
 
         }
 
+        /***************************************************************
+        【函数名称】         button7_Click
+        【函数功能】         
+        【参数】             输入参数：object sender, EventArgs e
+        【访问变量】         无
+        【返回值】           无
+        【使用情况】         调用Hide函数、MainForm::ShowDialog函数、Close函数;被鼠标点击选中xx按钮动作所调用
+        【开发者及日期】      Algernon, 2021/06/19
+        【版本】             V1.0
+        ****************************************************************/        
         private void button7_Click(object sender, EventArgs e)
         {//logout
             this.Hide();
@@ -77,11 +118,31 @@ namespace LibraryManagementSystem
             this.Close();
         }
 
+        /***************************************************************
+        【函数名称】         quitButton_Click
+        【函数功能】         退出窗口
+        【参数】             输入参数：object sender, EventArgs e
+        【访问变量】          无
+        【返回值】           无
+        【使用情况】         调用System.Windows.Forms.Timer::Start函数;被鼠标点击选中退出按钮动作所调用
+        【开发者及日期】      Algernon, 2021/06/19
+        【版本】             V1.0
+        ****************************************************************/
         private void quitButton_Click(object sender, EventArgs e)
         {
             timer_quit.Start();
         }
 
+        /***************************************************************
+        【函数名称】         timer_quit_Tick
+        【函数功能】         
+        【参数】             输入参数：object sender, EventArgs e
+        【访问变量】         无
+        【返回值】           无
+        【使用情况】         调用System.Windows.Forms.Timer::Stop函数、Close函数;被鼠标点击选中xx按钮动作所调用
+        【开发者及日期】      Algernon, 2021/06/19
+        【版本】             V1.0
+        ****************************************************************/
         private void timer_quit_Tick(object sender, EventArgs e)
         {
             if (this.Opacity >= 0.035)
@@ -93,13 +154,32 @@ namespace LibraryManagementSystem
             }
         }
 
-
+        /***************************************************************
+        【函数名称】         moveSidePanel
+        【函数功能】         
+        【参数】             输入参数：Control btn
+        【访问变量】         无
+        【返回值】           无
+        【使用情况】         未调用函数;被button1_Click函数、button2_Click函数、button1_Click_1函数、recommend_butt_Click函数、manageBook_butt_Click函数、manageReader_butt_Click函数、manageRecbooks_butt_Click函数调用
+        【开发者及日期】      Algernon, 2021/06/19
+        【版本】             V1.0
+        ****************************************************************/
         private void moveSidePanel(Control btn)
         {
             sidePanle_pb.Top = btn.Top;
             sidePanle_pb.Height = btn.Height;
         }
 
+        /***************************************************************
+        【函数名称】         button2_Click
+        【函数功能】         
+        【参数】             输入参数：object sender, EventArgs e
+        【访问变量】         UC_lookPB
+        【返回值】           无
+        【使用情况】         调用moveSidePanel函数、addControlsToPanel函数;被鼠标点击选中xx按钮动作所调用
+        【开发者及日期】      Algernon, 2021/06/19
+        【版本】             V1.0
+        ****************************************************************/
         private void button2_Click(object sender, EventArgs e)
         {
             moveSidePanel(lookupBooks);
@@ -112,6 +192,16 @@ namespace LibraryManagementSystem
 
         }
 
+        /***************************************************************
+        【函数名称】         timerTime_Tick
+        【函数功能】         
+        【参数】             输入参数：object sender, EventArgs e
+        【访问变量】         DateTime
+        【返回值】           无
+        【使用情况】         未调用函数;被鼠标点击选中xx按钮动作所调用
+        【开发者及日期】      Algernon, 2021/06/19
+        【版本】             V1.0
+        ****************************************************************/
         private void timerTime_Tick(object sender, EventArgs e)
         {
             DateTime dt = DateTime.Now;
@@ -122,6 +212,17 @@ namespace LibraryManagementSystem
 
         private bool formMove = false;//窗体是否移动
         private Point formPoint;//记录窗体未知
+
+        /***************************************************************
+        【函数名称】         FormDBoard_MouseDown
+        【函数功能】         
+        【参数】             输入参数：object sender, MouseEventArgs e
+        【访问变量】         MouseButtons、SystemInformation
+        【返回值】           无
+        【使用情况】         调用函数、Close函数;被鼠标点击选中xx按钮动作所调用
+        【开发者及日期】      Algernon, 2021/06/19
+        【版本】             V1.0
+        ****************************************************************/
         private void FormDBoard_MouseDown(object sender, MouseEventArgs e)
         {
             formPoint = new Point();
@@ -136,6 +237,16 @@ namespace LibraryManagementSystem
             }
         }
 
+        /***************************************************************
+        【函数名称】         FormDBoard_MouseMove
+        【函数功能】         
+        【参数】             输入参数：object sender, MouseEventArgs e
+        【访问变量】         Control、formPoint
+        【返回值】           无
+        【使用情况】         未调用函数;被鼠标点击选中xx按钮动作所调用
+        【开发者及日期】      Algernon, 2021/06/19
+        【版本】             V1.0
+        ****************************************************************/
         private void FormDBoard_MouseMove(object sender, MouseEventArgs e)//鼠标移动
         {
             if (formMove == true)
@@ -146,6 +257,16 @@ namespace LibraryManagementSystem
             }
         }
 
+        /***************************************************************
+        【函数名称】         FormDBoard_MouseUp
+        【函数功能】         
+        【参数】            输入参数：object sender, MouseEventArgs e
+        【访问变量】         MouseButtons
+        【返回值】          无
+        【使用情况】        未调用函数;被鼠标点击选中xx按钮动作所调用
+        【开发者及日期】     Algernon, 2021/06/19
+        【版本】            V1.0
+        ****************************************************************/
         private void FormDBoard_MouseUp(object sender, MouseEventArgs e)//鼠标松开
         {
             if (e.Button == MouseButtons.Left)//按下的是鼠标左键
@@ -159,6 +280,16 @@ namespace LibraryManagementSystem
 
         }
 
+        /***************************************************************
+        【函数名称】         button1_Click_1
+        【函数功能】         
+        【参数】             输入参数：object sender, EventArgs e
+        【访问变量】          UC_returnBooks
+        【返回值】           无
+        【使用情况】         调用moveSidePanel函数、addControlsToPanel函数;被鼠标点击选中xx按钮动作所调用
+        【开发者及日期】      Algernon, 2021/06/19
+        【版本】             V1.0
+        ****************************************************************/
         private void button1_Click_1(object sender, EventArgs e)
         {
             moveSidePanel(returnBooks);
@@ -166,6 +297,16 @@ namespace LibraryManagementSystem
             addControlsToPanel(ucrb);
         }
 
+        /***************************************************************
+        【函数名称】         recommend_butt_Click
+        【函数功能】         
+        【参数】             输入参数：object sender, EventArgs e
+        【访问变量】          recommend_butt
+        【返回值】           无
+        【使用情况】         调用moveSidePanel函数、addControlsToPanel函数;被鼠标点击选中xx按钮动作所调用
+        【开发者及日期】      Algernon, 2021/06/19
+        【版本】             V1.0
+        ****************************************************************/
         private void recommend_butt_Click(object sender, EventArgs e)
         {
             moveSidePanel(recommend_butt);
@@ -173,6 +314,16 @@ namespace LibraryManagementSystem
             addControlsToPanel(ucrec);
         }
 
+        /***************************************************************
+        【函数名称】         manageBook_butt_Click
+        【函数功能】         
+        【参数】             输入参数：object sender, EventArgs e
+        【访问变量】          manageBook_butt、user
+        【返回值】           无
+        【使用情况】         调用moveSidePanel函数、addControlsToPanel函数;被鼠标点击选中xx按钮动作所调用
+        【开发者及日期】      Algernon, 2021/06/19
+        【版本】             V1.0
+        ****************************************************************/
         private void manageBook_butt_Click(object sender, EventArgs e)
         {
             if (user.isManager)
@@ -185,6 +336,16 @@ namespace LibraryManagementSystem
                 MessageBox.Show("抱歉，该功能只针对管理员开放。", "Sorry");
         }
 
+        /***************************************************************
+        【函数名称】         manageReader_butt_Click
+        【函数功能】         
+        【参数】             输入参数：object sender, EventArgs e
+        【访问变量】          manageReader_butt、user
+        【返回值】           无
+        【使用情况】         调用moveSidePanel函数、addControlsToPanel函数;被鼠标点击选中xx按钮动作所调用
+        【开发者及日期】      Algernon, 2021/06/19
+        【版本】             V1.0
+        ****************************************************************/
         private void manageReader_butt_Click(object sender, EventArgs e)
         {
             if (user.isManager)
@@ -198,6 +359,16 @@ namespace LibraryManagementSystem
 
         }
 
+        /***************************************************************
+        【函数名称】         manageRecbooks_butt_Click
+        【函数功能】         
+        【参数】             输入参数：object sender, EventArgs e
+        【访问变量】          manageRecbooks_butt、user
+        【返回值】           无
+        【使用情况】         调用moveSidePanel函数、addControlsToPanel函数;被鼠标点击选中xx按钮动作所调用
+        【开发者及日期】      Algernon, 2021/06/19
+        【版本】             V1.0
+        ****************************************************************/
         private void manageRecbooks_butt_Click(object sender, EventArgs e)
         {
             //if (user.isManager)
