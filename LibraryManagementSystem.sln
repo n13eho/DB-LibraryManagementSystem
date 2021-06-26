@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagementSystem", "LibraryManagementSystem.csproj", "{2623CB8E-432F-4272-A2E3-3D69B8E0F867}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "LMS", "..\..\04可执行程序\LMS\LMS.vdproj", "{F1AE5354-D473-41E5-8BCD-49C22614CE66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2623CB8E-432F-4272-A2E3-3D69B8E0F867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2623CB8E-432F-4272-A2E3-3D69B8E0F867}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2623CB8E-432F-4272-A2E3-3D69B8E0F867}.Debug|x64.ActiveCfg = Debug|x64
+		{2623CB8E-432F-4272-A2E3-3D69B8E0F867}.Debug|x64.Build.0 = Debug|x64
+		{2623CB8E-432F-4272-A2E3-3D69B8E0F867}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2623CB8E-432F-4272-A2E3-3D69B8E0F867}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2623CB8E-432F-4272-A2E3-3D69B8E0F867}.Release|x64.ActiveCfg = Release|x64
+		{2623CB8E-432F-4272-A2E3-3D69B8E0F867}.Release|x64.Build.0 = Release|x64
+		{F1AE5354-D473-41E5-8BCD-49C22614CE66}.Debug|Any CPU.ActiveCfg = Debug
+		{F1AE5354-D473-41E5-8BCD-49C22614CE66}.Debug|x64.ActiveCfg = Debug
+		{F1AE5354-D473-41E5-8BCD-49C22614CE66}.Release|Any CPU.ActiveCfg = Release
+		{F1AE5354-D473-41E5-8BCD-49C22614CE66}.Release|x64.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A6A81781-D88E-4319-B91C-E10486987022}
+	EndGlobalSection
+EndGlobal

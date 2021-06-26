@@ -1,0 +1,10 @@
+F:\DB_Sys\LibraryManagementSystem\bin\Debug\LibraryManagementSystem.exe.config
+F:\DB_Sys\LibraryManagementSystem\bin\Debug\LibraryManagementSystem.exe
+F:\DB_Sys\LibraryManagementSystem\bin\Debug\LibraryManagementSystem.pdb
+F:\DB_Sys\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csprojAssemblyReference.cache
+F:\DB_Sys\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Properties.Resources.resources
+F:\DB_Sys\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csproj.GenerateResource.cache
+F:\DB_Sys\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.exe
+F:\DB_Sys\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.pdb
+F:\DB_Sys\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.FormDBoard.resources
+F:\DB_Sys\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.MainForm.resources
