@@ -11,6 +11,13 @@ using System.Data.Odbc;
 
 namespace LibraryManagementSystem
 {
+    /*************************************************************************
+    【类名】              FormSignUp
+    【功能】             登录窗口
+    【接口说明】          label3_Click(object sender, EventArgs e)、translatePassword(string uno, string pass)、updateUserInfo()、updateUserInfo()、signUp_butt_Click(object sender, EventArgs e)、
+    【开发者及日期】      Algernon, 2021/06/19
+    【版本】             1.0
+    *************************************************************************/
     public partial class FormSignUp : Form
     {
         public FormSignUp()

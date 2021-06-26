@@ -11,6 +11,13 @@ using System.Windows.Forms;
 
 namespace LibraryManagementSystem
 {
+    /*************************************************************************
+    【类名】             Form_whoBorrowedThisBook
+    【功能】             显示图书借阅信息的窗体
+    【接口说明】          showInfo()、label5_Click(object sender, EventArgs e)、submit_Click(object sender, EventArgs e)
+    【开发者及日期】      Algernon, 2021/06/19
+    【版本】             1.0
+    *************************************************************************/
     public partial class Form_whoBorrowedThisBook : Form
     {
         private string bno;

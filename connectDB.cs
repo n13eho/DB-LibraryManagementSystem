@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementSystem
 {
+    /*************************************************************************
+    【类名】             connectDB
+    【功能】             保存连接DB的语句
+    【接口说明】           SqlInject(string s)
+    【开发者及日期】       Algernon, 2021/06/19
+    【版本】              1.0
+    *************************************************************************/
     class connectDB
     {
         //public static string conString = "DSN=_library;UID=root;PWD=123456"; //ODBC的数据源名

@@ -11,6 +11,13 @@ using System.Windows.Forms;
 
 namespace LibraryManagementSystem
 {
+    /*************************************************************************
+    【类名】             Form_addBook
+    【功能】             系统使用主窗体
+    【接口说明】          label1_Click(object sender, EventArgs e)、label1_Click(object sender, EventArgs e)、addControlsToPanel(Control c)、button1_Click(object sender, EventArgs e)、manageRecbooks_butt_Click(object sender, EventArgs e)、manageReader_butt_Click(object sender, EventArgs e)、manageBook_butt_Click(object sender, EventArgs e)、recommend_butt_Click(object sender, EventArgs e)、button1_Click_1(object sender, EventArgs e)、panelControl_Paint(object sender, PaintEventArgs e)、FormDBoard_MouseUp(object sender, MouseEventArgs e)、FormDBoard_MouseMove(object sender, MouseEventArgs e)、FormDBoard_MouseDown(object sender, MouseEventArgs e)、timerTime_Tick(object sender, EventArgs e)、button2_Click(object sender, EventArgs e)、label7_Click(object sender, EventArgs e)、moveSidePanel(Control btn)
+    【开发者及日期】      Algernon, 2021/06/19
+    【版本】             1.0
+    *************************************************************************/
     public partial class FormDBoard : Form
     {
         private userInfo user;

@@ -10,6 +10,13 @@ using System.Windows.Forms;
 
 namespace LibraryManagementSystem
 {
+    /*************************************************************************
+    【类名】              MainForm
+    【功能】             登录、注册主窗口
+    【接口说明】          login_pb_Click(object sender, EventArgs e)、quitTimer_Tick(object sender, EventArgs e)、label2_Click(object sender, EventArgs e)、loginPanelTop_MouseUp(object sender, MouseEventArgs e)、signUp_Click(object sender, EventArgs e)、signUp_Click(object sender, EventArgs e)、buttonLogin_Click(object sender, EventArgs e)
+    【开发者及日期】      Algernon, 2021/06/19
+    【版本】             1.0
+    *************************************************************************/
     public partial class MainForm : Form
     {
         public MainForm()
