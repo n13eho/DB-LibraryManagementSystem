@@ -7,6 +7,13 @@ using System.Data.Odbc;
 
 namespace LibraryManagementSystem
 {
+    /*************************************************************************
+    【类名】             userInfo
+    【功能】             保存用户名、用户密码哈希字符串
+    【接口说明】          getUserInfo()、checkID()
+    【开发者及日期】      Algernon, 2021/06/19
+    【版本】             V1.0
+    *************************************************************************/
     public class userInfo
     {
         // 账号和密码
@@ -36,7 +43,17 @@ namespace LibraryManagementSystem
             else isValid = false;
 
         }
-        /**/
+
+        /*************************************************************************
+        【函数名称】       getUserInfo
+        【函数功能】       通过用户输入的userId，访问数据库，得到用户的信息：用户名称、是否是管理员、身份是否合法
+        【参数】           无
+        【访问变量】       userId, OdbcConnection
+        【返回值】         无
+        【使用情况】       没有调用其他函数；被构造函数userInfo::userInfo()使用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         private void getUserInfo()
         {
             OdbcConnection con = new OdbcConnection(conString);
@@ -56,6 +73,17 @@ namespace LibraryManagementSystem
             con.Close();
         }
 
+
+        /*************************************************************************
+        【函数名称】       checkID
+        【函数功能】       通过用户输入的userId和用户输入的密码，访问数据库；检查密码正确性和用户身份
+        【参数】           无
+        【访问变量】       userId, userPass
+        【返回值】         无
+        【使用情况】       没有调用其他函数；被构造函数userInfo::userInfo()使用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         private bool checkID()
         {// 用于和数据库相联，检查身份，并确认等级（普通用户还是管理员）
             //return true;
