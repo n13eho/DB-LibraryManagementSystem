@@ -36,7 +36,7 @@ namespace LibraryManagementSystem
             else isValid = false;
 
         }
-
+        /**/
         private void getUserInfo()
         {
             OdbcConnection con = new OdbcConnection(conString);
