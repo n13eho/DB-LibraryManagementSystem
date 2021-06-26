@@ -16,22 +16,54 @@ namespace LibraryManagementSystem
     【功能】             向数据库增加图书信息的窗体
     【接口说明】          reset_butt_Click(object sender, EventArgs e)、clearTB()、submit_Click(object sender, EventArgs e)、
     【开发者及日期】      Algernon, 2021/06/19
-    【版本】             1.0
+    【版本】             V1.0
     *************************************************************************/
     public partial class Form_addBook : Form
     {
         private userInfo user;
+
+        /*************************************************************************
+        【函数名称】       Form_addBook
+        【函数功能】       类的构造函数、初始化窗口信息
+        【参数】           输入参数：userInfo theUser
+        【访问变量】       无
+        【返回值】         无
+        【使用情况】       调用InitializeComponent函数;被UCM_manageBooks::addBooks_butt_Click函数调用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        *************************************************************************/
         public Form_addBook(userInfo theUser)
         {
             InitializeComponent();
             user = theUser;
         }
+        
+        /***************************************************************
+        【函数名称】       reset_butt_Click
+        【函数功能】       重置图书信息按钮
+        【参数】           输入参数：object sender, EventArgs e
+        【访问变量】       无
+        【返回值】         无
+        【使用情况】       调用clearTB函数;被鼠标点击选中重置按钮动作所调用
+        【开发者及日期】    Algernon, 2021/06/19
+        【版本】           V1.0
+        ****************************************************************/
 
         private void reset_butt_Click(object sender, EventArgs e)
         {
             clearTB();
         }
 
+        /***************************************************************
+        【函数名称】         clearTB
+        【函数功能】         重置图书信息：作者、书名、出版社、类型
+        【参数】             输入参数：无
+        【访问变量】         无
+        【返回值】           无
+        【使用情况】         没有调用其他函数；被reset_butt_Click函数、submit_Click函数调用
+        【开发者及日期】      Algernon, 2021/06/19
+        【版本】             V1.0
+        ****************************************************************/
         private void clearTB()
         {
             tb_author.Text = "";
@@ -40,6 +72,16 @@ namespace LibraryManagementSystem
             tb_type.Text = "";
         }
 
+        /***************************************************************
+        【函数名称】         submit_Click
+        【函数功能】         提交新增图书信息
+        【参数】             输入参数：object sender, EventArgs e
+        【返回值】           无
+        【访问变量】         tb_bname、tb_author、tb_pu、tb_type、OdbcConnection
+        【使用情况】         调用MessageBox.Show()函数；被鼠标点击选中提交按钮动作所调用
+        【开发者及日期】      Algernon, 2021/06/19
+        【版本】             V1.0
+        ****************************************************************/
         private void submit_Click(object sender, EventArgs e)
         {
             string bname = tb_bname.Text, author = tb_author.Text, publisher = tb_pu.Text, b_type = tb_type.Text;
