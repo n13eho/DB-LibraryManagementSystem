@@ -193,6 +193,11 @@ namespace LibraryManagementSystem.UserControls
                 }
 
             }
+            else
+            {
+                // MessageBox.Show(e.RowIndex.ToString());
+                MessageBox.Show("请选中已被借阅的书籍，以查看相关借阅信息");
+            }
         }
 
         /*************************************************************************
@@ -241,13 +246,25 @@ namespace LibraryManagementSystem.UserControls
                     if (result == DialogResult.OK)
                     {
                         // 连接数据库
-                        OdbcConnection con = new OdbcConnection(user.conString);
-                        con.Open();
-                        string sql = "DELETE FROM book WHERE (`bno` = '" + bno + "');";
-                        OdbcCommand com = new OdbcCommand(sql, con);
-                        com.ExecuteNonQuery();
-                        con.Close();
-                        MessageBox.Show("删除成功！", "Success");
+                        try
+                        {
+                            OdbcConnection con = new OdbcConnection(user.conString);
+                            con.Open();
+                            string sql = "DELETE FROM book WHERE (`bno` = '" + bno + "');";
+                            OdbcCommand com = new OdbcCommand(sql, con);
+                            com.ExecuteNonQuery();
+                            con.Close();
+                            MessageBox.Show("删除成功！", "Success");
+                            con.Close();
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("请输入合法的搜索字符", "ERROR");
+                        }
+                        finally
+                        {
+                            ;
+                        }
                     }
                     else
                     {
