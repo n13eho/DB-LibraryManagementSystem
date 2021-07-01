@@ -125,17 +125,25 @@ namespace LibraryManagementSystem
         private void submit_Click(object sender, EventArgs e)
         {
             readNewInfo();
+            if(isBorrowed == "0" || isBorrowed == "1")
+            {
 
-            OdbcConnection con = new OdbcConnection(user.conString);
-            con.Open();
-            string sql = "update book set bname = '" + bname + "', author = '" + author + "', publisher = '" + publisher + "', isBorrowed = '" + isBorrowed + "' where bno like '" + bno + "'; ";
+                OdbcConnection con = new OdbcConnection(user.conString);
+                con.Open();
+                string sql = "update book set bname = '" + bname + "', author = '" + author + "', publisher = '" + publisher + "', isBorrowed = '" + isBorrowed + "' where bno like '" + bno + "'; ";
             
-            OdbcCommand com = new OdbcCommand(sql, con);
-            com.ExecuteNonQuery();
-            con.Close();
+                OdbcCommand com = new OdbcCommand(sql, con);
+                com.ExecuteNonQuery();
+                con.Close();
 
-            MessageBox.Show("修改图书信息成功", "Success!");
-            this.Dispose();
+                MessageBox.Show("修改图书信息成功", "Success!");
+                this.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("是否借出状态只能是0或1", "Error");
+                //MessageBox.Show(isBorrowed, "Error");
+            }
         }
     }
 }

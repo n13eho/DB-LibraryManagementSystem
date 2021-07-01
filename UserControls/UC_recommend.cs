@@ -70,11 +70,12 @@ namespace LibraryManagementSystem.UserControls
         *************************************************************************/
         private void submit_butt_Click(object sender, EventArgs e)
         {
-            Match m = Regex.Match(tb_bookName.Text, @".*[^\s]");
+            Match bn = Regex.Match(tb_bookName.Text, @".*[^\s]");
+            Match an = Regex.Match(tb_author.Text, @".*[^\s]");
             //if (tb_author.Text == "" || tb_bookName.Text == "")
-            if (!m.Success)
-            {
-                MessageBox.Show("请输入有效的书名和作者名！", "Error");
+            if (!bn.Success || !an.Success || connectDB.SqlInject(tb_bookName.Text) || connectDB.SqlInject(tb_author.Text))
+            {// 对空输入和sql注入的检测
+                MessageBox.Show("请输入合法且有效的书名和作者名！", "Error");
             }
             else
             {

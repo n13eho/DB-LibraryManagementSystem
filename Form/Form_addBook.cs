@@ -89,6 +89,8 @@ namespace LibraryManagementSystem
 
             if(bname == "" || author == "" || publisher == "" || b_type == "")
                 MessageBox.Show("请完整输入相关信息！", "Error");
+            else if(bname.Length >= 50 || author.Length >= 20 || publisher.Length >= 20 || b_type.Length >= 20)
+                MessageBox.Show("太长了，会炸的，重新输入plz", "ERROR");
             else
             {
                 string bno = Convert.ToString(DateTimeOffset.Now.ToUnixTimeSeconds());

@@ -20,8 +20,8 @@ namespace LibraryManagementSystem
         
         public static bool SqlInject(string s)
         {//检测是否发生sql注入，发生则返回true
-            //主要是检测这个字串中有没有‘-- ’
-            if (s.Contains(" -- ")) return true;
+            //主要是检测这个字串中有没有‘-- ’ 和 ‘'’
+            if (s.Contains(" -- ") || s.Contains("'")) return true;
             else return false;
         }
 
