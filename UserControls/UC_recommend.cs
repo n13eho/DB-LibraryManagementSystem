@@ -98,9 +98,13 @@ namespace LibraryManagementSystem.UserControls
                     con.Open();
                     string sql1 = "select count(*) from recommended_books where rc_bname = '" + rc_bname + "' and rc_author = '" + rc_author + "';";
                     OdbcCommand com1 = new OdbcCommand(sql1, con);
-                    string res = Convert.ToString(com1.ExecuteScalar());
+                    string res1 = Convert.ToString(com1.ExecuteScalar());
 
-                    if (res == "0")
+                    string sqlb = "select count(*) from book where bname = '" + rc_bname + "' and author = '" + rc_author + "';";
+                    OdbcCommand comb = new OdbcCommand(sqlb, con);
+                    string resb = Convert.ToString(comb.ExecuteScalar());
+
+                    if (res1 == "0" && resb == "0")
                     {// 原来的rc表上没有推荐过的
                         string sql2 = "insert into recommended_books values('" + uno + "', '" + rc_bname + "', '" + rc_author + "', '" + rc_pHouse + "', '" + rc_date + "')";
                         //MessageBox.Show(sql2);
@@ -109,9 +113,13 @@ namespace LibraryManagementSystem.UserControls
                         MessageBox.Show("推荐成功！谢谢反馈！", "Success");
 
                     }
-                    else
+                    else if(res1 != "0")
                     {// 这本书已经被推荐过了
                         MessageBox.Show("这本书已经被推荐过了", "Message");
+                    }
+                    else
+                    {// 这本书已经在图书馆里面
+                        MessageBox.Show("这本书已存在", "Message");
                     }
                     con.Close();
                     tb_author.Text = "";

@@ -108,6 +108,10 @@ namespace LibraryManagementSystem
             {//
                 MessageBox.Show("请正确输入11位的电话号码", "Error");
             }
+            else if (uname_tb.Text.Length >= 9)
+            {//
+                MessageBox.Show("名字过长，请重新输入", "Error");
+            }
             else if(pass_tb.Text != pass2_tb.Text)
             {//两次密码不一样
                 MessageBox.Show("两次密码不一致，请重新校对后输入", "Error");
