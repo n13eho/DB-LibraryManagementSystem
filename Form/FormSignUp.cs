@@ -99,22 +99,27 @@ namespace LibraryManagementSystem
                 || pass2_tb.Text == "" || ugender_comb.Text == "" || tele_tb.Text == "")
             {//没输入完整
                 MessageBox.Show("请输入完整的信息", "Error");
+                return;
             }
             if (uno_tb.Text.Length != 10)
             {//
                 MessageBox.Show("请正确输入10位的工号", "Error");
+                return;
             }
             if (tele_tb.Text.Length != 11)
             {//
                 MessageBox.Show("请正确输入11位的电话号码", "Error");
+                return;
             }
             if (uname_tb.Text.Length >= 9)
             {//
                 MessageBox.Show("名字过长，请重新输入", "Error");
+                return;
             }
             if(pass_tb.Text != pass2_tb.Text)
             {//两次密码不一样
                 MessageBox.Show("两次密码不一致，请重新校对后输入", "Error");
+                return;
             }
             else
             {//insert了
