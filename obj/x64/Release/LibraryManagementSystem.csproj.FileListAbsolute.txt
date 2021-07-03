@@ -40,3 +40,4 @@ W:\软工实验课\DB-LibraryManagementSystem-main\02源代码和相关源文件
 W:\软工实验课\DB-LibraryManagementSystem-main\02源代码和相关源文件\LibraryManagementSystem\obj\x64\Release\LibraryManagementSystem.csproj.CoreCompileInputs.cache
 W:\软工实验课\DB-LibraryManagementSystem-main\02源代码和相关源文件\LibraryManagementSystem\obj\x64\Release\LibraryManagementSystem.exe
 W:\软工实验课\DB-LibraryManagementSystem-main\02源代码和相关源文件\LibraryManagementSystem\obj\x64\Release\LibraryManagementSystem.pdb
+W:\软工实验课\DB-LibraryManagementSystem-main\02源代码和相关源文件\LibraryManagementSystem\obj\x64\Release\LibraryManagementSystem.csproj.AssemblyReference.cache
